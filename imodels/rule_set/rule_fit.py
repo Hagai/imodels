@@ -100,6 +100,7 @@ class RuleFit(BaseEstimator, TransformerMixin, RuleSet):
         self.friedscale = FriedScale(self.winsorizer)
         self.stddev = None
         self.mean = None
+        self.complexity_ = None  # Patch to allow autogluon to avoid crash when getting info about untrained model.
 
     def fit(self, X, y=None, feature_names=None):
         """Fit and estimate linear combination of rule ensemble
