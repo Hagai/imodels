@@ -242,6 +242,7 @@ class SkopeRulesClassifier(BaseEstimator, RuleSet, ClassifierMixin):
         self.n_jobs = n_jobs
         self.random_state = random_state
         self.verbose = verbose
+        self.complexity_ = None  # Patch to allow autogluon to avoid crash when getting info about untrained model.
 
     def fit(self, X, y, feature_names=None, sample_weight=None):
         """Fit the model according to the given training data.
